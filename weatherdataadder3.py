@@ -12,7 +12,7 @@ import pandas as pd
 #     if daydata not in uniquedays:
 #         uniquedays.append(daydata)
 # uniquedays = pd.DataFrame(uniquedays)
-weathercsv = pd.read_csv("C:\\Users\\Sakhayaan Gavrilyev\\source\\repos\\tensorRadonFlux\\27605.08.11.2018.19.04.2022.1.0.0.ru.utf8.00000000.csv", na_values='', sep =';', skiprows = 6, encoding = 'utf-8', index_col=False)
+weathercsv = pd.read_csv("input.csv", na_values='', sep =';', skiprows = 6, encoding = 'utf-8', index_col=False)
 trashcols = ["P", "Pa", "ff10", "ff3", "N", "W1", "W2", "Tn", "Tx", "Cl", "Nh", "H", "Cm", "Ch", "VV", "tR", "E", "Tg", "E'", "sss"]
 weathercsv = weathercsv.drop(trashcols, axis = 1)
 weathercsv['RRR'] = weathercsv['RRR'].replace('Осадков нет', 0)
